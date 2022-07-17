@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: #59336b;
+            background-image: url('assets/background.jpg');
+        }
+
+        .flex {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
+        }
+
+        .loader {
+            border: 5px solid rgba(18, 65, 145, 255);
+            border-radius: 50%;
+            border-top: 5px solid #ffffff;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 1s linear infinite;
+            /* Safari */
+            animation: spin 1s linear infinite;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+            position: fixed;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center {
+            border: none !important;
+            text-align: center;
+        }
+
+        @font-face {
+            font-family: 'Gurajada';
+            src: url('./assets/Gurajada.ttf') format('truetype');
+        }
+
+        * {
+            color: #e2e2e2;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            font-family: "Gurajada", serif;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        .bannerVideo {
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            min-height: 300px;
+            max-height: 300px;
+            text-align: center;
+        }
+
+        #bannerVideo {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .bannerVideo img.mainLogo {
+            max-width: 150px;
+            min-width: 150px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+            width: 150px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bannerVideo">
+        <video autoplay="" muted="" playsinline="" loop="" id="bannerVideo" poster="assets/bannervideo.jpg">
+            <source src="assets/bannervideo1080.mp4" type="video/mp4" media="(min-width:721px)">
+            <source src="assets/bannervideo576.mp4" type="video/mp4" media="(max-width:576px)">
+            <source src="assets/bannervideo720.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <img src="assets/logo.png" alt="logo" class="mainLogo">
+
+        <h3>Flyff universe is starting...</h3>
+        <p>Press <code>CTRL</code> + <code>ALT</code> + <code>ESC</code> to quit.</p>
+
+        <div class="loader"></div>
+    </div>
+
+</html>
